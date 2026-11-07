@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Company HQ — Mission Control</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">◈</span>
+    <div>
+      <div class="brand-name">MERIDIAN LABS</div>
+      <div class="brand-sub">AI Company HQ · v1.0</div>
+    </div>
+  </div>
+
+  <div class="clockbox">
+    <div class="clock-date" id="clock-date">Mon · Day 1 · Week 1</div>
+    <div class="clock-time" id="clock-time">07:55</div>
+  </div>
+
+  <div class="vibemeter">
+    <span class="vibe-label">OFFICE VIBE</span>
+    <div class="vibe-track"><div class="vibe-fill" id="vibe-fill"></div></div>
+    <span class="vibe-val" id="vibe-val">--</span>
+  </div>
+
+  <div class="speedbox">
+    <button class="speed-btn" id="btn-pause" title="Pause">⏸</button>
+    <button class="speed-btn active" data-speed="1">1×</button>
+    <button class="speed-btn" data-speed="3">3×</button>
+    <button class="speed-btn" data-speed="8">8×</button>
+    <button class="skip-btn" id="btn-skip" title="Fast-forward to next meeting">⏭ Skip to meeting</button>
+    <button class="skip-btn" id="btn-reset" title="Wipe the save and restart the company from Monday">⟲ Reset company</button>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="office">🛋 Office Board</button>
+  <button class="tab" data-tab="team">👥 Team &amp; Levels</button>
+  <button class="tab" data-tab="skills">📚 Skills Library</button>
+  <button class="tab" data-tab="meetings">📋 Meetings</button>
+  <button class="tab" data-tab="projects">🚀 Projects</button>
+</nav>
+
+<main>
+  <!-- OFFICE BOARD -->
+  <section class="tab-panel active" id="panel-office">
+    <div class="office-layout">
+      <div class="desks" id="desks"></div>
+      <aside class="feedbar">
+        <div class="feed-head">
+          <span>LIVE FEED</span>
+          <span class="blink">●</span>
+        </div>
+        <div class="feed" id="feed"></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="tab-panel" id="panel-team">
+    <div class="team-grid" id="team-grid"></div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="tab-panel" id="panel-skills">
+    <div class="skills-layout">
+      <aside class="schools" id="skills-side"></aside>
+      <div class="skills-main" id="skills-grid"></div>
+    </div>
+  </section>
+
+  <!-- MEETINGS -->
+  <section class="tab-panel" id="panel-meetings">
+    <div class="meetings-head" id="meetings-head"></div>
+    <div class="meeting-log" id="meeting-log"></div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="tab-panel" id="panel-projects">
+    <div class="projects-grid" id="projects-grid"></div>
+  </section>
+</main>
+
+<!-- LIVE MEETING MODAL -->
+<div class="modal-backdrop hidden" id="modal-backdrop">
+  <div class="modal">
+    <div class="modal-head">
+      <div id="modal-title">Daily Brief</div>
+      <button class="modal-close" id="modal-close">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-foot" id="modal-foot">◉ recording…</div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
